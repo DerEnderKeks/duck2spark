@@ -23,8 +23,8 @@ Project files
 
 * duck2spark.py - Main script
 * README.rst - this file
-* example.sh - Example script building a payload by running DuckEncoder followed by duck2spark.py (encoder.jar has to be present)
-* example.duck - RubberDucky script with test cases used by example.sh
+* convert.sh - Script to convert a Duckyscript by running DuckEncoder followed by duck2spark.py (encoder.jar has to be present)
+* example.duck - RubberDucky script with test case
 
 Requirements
 ============
