@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ "$1" == "-h" ]; then
-  echo "Usage: $0 [<input> [output]]"
+  echo "Usage: $0 [<input=spark.ducky> [output=spark.ino]]"
   echo -e "Use \e[34m\$DUCKLANG\e[0m to set the keyboard language (default: \e[34mde\e[0m)."
   exit 0
 fi
@@ -14,7 +14,7 @@ fi
 
 
 if [ -z "$1" ]; then
-  INFILE="spark.duck"
+  INFILE="spark.ducky"
 else
   INFILE="$1"
 fi
