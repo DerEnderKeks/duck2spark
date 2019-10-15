@@ -6,6 +6,8 @@ if [ "$1" == "-h" ]; then
   exit 0
 fi
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 if [ -z "$DUCKLANG" ]; then
   DUCKLANG="de"
 fi
@@ -35,10 +37,10 @@ check_error () {
   fi
 }
 
-java -jar encoder.jar -i "$INFILE" -o "$TMPBINFILE" -l "$DUCKLANG"
+java -jar "$DIR/encoder.jar" -i "$INFILE" -o "$TMPBINFILE" -l "$DUCKLANG"
 check_error "Encoder" $?
 
-python duck2spark.py -i "$TMPBINFILE" -f 0 -o "$OUTFILE"
+python "$DIR/duck2spark.py" -i "$TMPBINFILE" -f 0 -o "$OUTFILE"
 check_error "duck2spark" $?
 
 rm "$TMPBINFILE" 
